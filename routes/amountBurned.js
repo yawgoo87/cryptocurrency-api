@@ -12,11 +12,17 @@ router.get("/", async (req, res, next) => {
   
   let amountBurned = 0;
   const decimals = await tokenContract.methods.decimals().call();
-  
+
   txnData = await web3.eth.getTransactionReceipt(deploymentTxn);
-  console.log(txnData)
-  tokenDeploymentBlock = await txnData.blockNumber;
   currentBlock = await web3.eth.getBlockNumber();
+
+  if (txnData == null){
+    tokenDeploymentBlock = currentBlock - 9900;
+    console.log("ABOBA");
+  } else {
+    tokenDeploymentBlock = await txnData.blockNumber;
+    console.log(tokenDeploymentBlock)
+  }
 
   const burnTransactions = await tokenContract.getPastEvents('Transfer',
   {
@@ -26,9 +32,13 @@ router.get("/", async (req, res, next) => {
   })
   .catch((err) => console.error(err));
 
-  burnTransactions.forEach(element => {
-    amountBurned += element.returnValues.value * 10 ** -decimals
-  });
+  if (burnTransactions == undefined){
+    amountBurned = 0;
+  } else {
+    burnTransactions.forEach(element => {
+      amountBurned += element.returnValues.value * 10 ** -decimals
+    });
+  }
 
   return res.status(200).json(amountBurned);
 });

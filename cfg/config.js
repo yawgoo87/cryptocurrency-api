@@ -1,5 +1,5 @@
 // Blockchain RPC URL
-const rpcUrl = 'https://bsc-mainnet.gateway.pokt.network/v1/lb/6136201a7bad1500343e248d';
+const rpcUrl = 'https://bsc-dataseed1.binance.org';
 
 // Your token address
 const tokenAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'; // CAKE [Example]
