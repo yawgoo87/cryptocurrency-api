@@ -1,11 +1,11 @@
 // Blockchain RPC URL
-const rpcUrl = 'https://data-seed-prebsc-1-s3.binance.org:8545/';
+const rpcUrl = 'https://bsc-mainnet.gateway.pokt.network/v1/lb/6136201a7bad1500343e248d';
 
 // Your token address
-const tokenAddress = '0xE3681285F81A79aF089EC1Dcea71E3A1Ed67B3dA';
+const tokenAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'; // CAKE [Example]
 
 // Pair token address
-const pairAddress = '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd';
+const pairAddress = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'; // WBNB [Example]
 
 const pairTokenTicker = 'BNB';
 
@@ -13,13 +13,14 @@ const pairTokenTicker = 'BNB';
 const pairCoinId = 'binancecoin';
 
 // Your token deployment Txn Hash
-const deploymentTxn = '0xcc460e314f0ab69c589d0ed6b769105e63accb586239bda1b761f1f82acc66a6';
+const deploymentTxn = '0x7dd36f3b6d38f8a6b2f2fb0c850a75d57114a1b2fdcd350eaeee609cf3d827ae';
 
-const liquidityPoolAddress = '0x32D40d5BA14a3751c632c0F6C9184CBf4da6F431';
+const liquidityPoolAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82';
 
 // Addresses where tokens do not participate in circulation like owner, reserve wallets, etc.
 const lockedWallets = [
-    '0xC9ea25c2A95473d0AF6d254Aa17E8c5A82DFe4a9',
+    '0x73feaa1eE314F8c655E354234017bE2193C9E24E', // Main staking contract [Example]
+    '0x0F9399FC81DaC77908A2Dde54Bb87Ee2D17a3373', // Owner [Example] 
 ]
 
 module.exports = {rpcUrl, tokenAddress, pairAddress, lockedWallets, deploymentTxn, liquidityPoolAddress, pairTokenTicker, pairCoinId};
