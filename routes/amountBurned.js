@@ -14,6 +14,7 @@ router.get("/", async (req, res, next) => {
   const decimals = await tokenContract.methods.decimals().call();
   
   txnData = await web3.eth.getTransactionReceipt(deploymentTxn);
+  console.log(txnData)
   tokenDeploymentBlock = await txnData.blockNumber;
   currentBlock = await web3.eth.getBlockNumber();
 
