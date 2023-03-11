@@ -15,7 +15,7 @@ const pairCoinId = 'binancecoin';
 // Your token deployment Txn Hash
 const deploymentTxn = '0x7dd36f3b6d38f8a6b2f2fb0c850a75d57114a1b2fdcd350eaeee609cf3d827ae';
 
-const liquidityPoolAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82';
+const liquidityPoolAddress = '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0';
 
 // Addresses where tokens do not participate in circulation like owner, reserve wallets, etc.
 const lockedWallets = [
