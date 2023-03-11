@@ -1,0 +1,15 @@
+
+0xC9ea25c2A95473d0AF6d254Aa17E8c5A82DFe4a9 - my wallet(owner)
+
+https://data-seed-prebsc-1-s3.binance.org:8545/ - Testnet RPC
+
+/totalSupply
+/circulationSupply
+/amountBurned
+/tradingData
+
+
+
+
+
+
