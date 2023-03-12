@@ -83,10 +83,54 @@ This symbol will be displayed at the endpoint /tradingData
 const pairTokenTicker = 'BNB';
 ```
 #### Pair coin id on CoinGecko
-This is necessary to calculate the exact price of the token. to do this, go to [CoinGecko], find the pair with which your token is traded and copy its ID. This can be done as shown in the illustration.
-
+This is necessary to calculate the exact price of the token. to do this, go to [CoinGecko], find the pair with which your token is traded and copy its *API id*. This can be done as shown in the illustration.
+![how to find ](../main/img/illustration-1.jpg)
 ```javascript
 // Pair coin id on CoinGecko
 const pairCoinId = 'binancecoin';
 ```
+#### Deployment Txn
+Paste the Deployment Txn of your token. For example, this is [deployment txn for CAKE token](https://bscscan.com/tx/0x7dd36f3b6d38f8a6b2f2fb0c850a75d57114a1b2fdcd350eaeee609cf3d827ae)
+```javascript
+// Your token deployment Txn Hash
+const deploymentTxn = '0x7dd36f3b6d38f8a6b2f2fb0c850a75d57114a1b2fdcd350eaeee609cf3d827ae';
+```
+#### Liquidity pool
+By providing liquidity for your pair of tokens, you have probably found LP tokens appearing in your wallet. This is the address of the liquidity pool. Here is an example of a liquidity pool for a trading pair [CAKE-WBNB](https://bscscan.com/address/0x0eD7e52944161450477ee417DE9Cd3a859b14fD0)
+```javascript
+const liquidityPoolAddress = '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0';
+```
+#### Locked addresses
+Put there addreses, where tokens definetly excluded from free circulation, it can be developers team's wallets, smart-contracts etc.
+```javascript
+// Addresses where tokens do not participate in circulation like owner, reserve wallets, etc.
+const lockedWallets = [
+    '0x73feaa1eE314F8c655E354234017bE2193C9E24E', // Main staking contract [Example]
+    '0x0F9399FC81DaC77908A2Dde54Bb87Ee2D17a3373', // Owner [Example] 
+]
+```
 
+***Now you need to configure ABI files for both tokens in your trading pair***
+First we will setup CAKE Abi in [tokenABI.json](../main/cfg/abi) file. Go to code section of token's smart-contract on blockchain explorer [Example](https://bscscan.com/address/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82#code) and copy ABI. Paste it to tokenABI.json
+
+It works the smae for WBNB Abi, but in [pairABI.json](../main/cfg/abi) file.
+
+Thats all confuguration you need to do.
+
+## Deploying
+
+#### GitHub
+Put project directore to your GitHub repo by drag-and-drop or using GIT.
+
+#### Vercel
+For deploying we will use Vercel because you don't need anything to setup. 
+- Follow the link and sign is with your GitHub(you will need to virefy with phone number)
+- Allow Vercel access to all your repositories
+- Go to Dashboard > Add new [Project] > Select your GitHub account and set the repository where you putted code.
+- Press 'Deploy' button
+- 🎉 Congratulation, you got free API for your own cryptocurrency.
+
+Climb up to learn how to use routes ☝️
+
+
+GitHub: @yawgoo87
